@@ -50,13 +50,13 @@ You can install Postman via this website: https://www.postman.com/downloads/
 ## Mandatory Checklists (Publisher)
 -   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Subscriber model struct.`
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Subscriber repository.`
-    -   [ ] Commit: `Implement list_all function in Subscriber repository.`
-    -   [ ] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [x] Commit: `Create Subscriber model struct.`
+    -   [x] Commit: `Create Notification model struct.`
+    -   [x] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
+    -   [x] Commit: `Implement add function in Subscriber repository.`
+    -   [x] Commit: `Implement list_all function in Subscriber repository.`
+    -   [x] Commit: `Implement delete function in Subscriber repository.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -77,6 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. In the observer pattern, Subscriber is typically an interface or trait for flexibility with multiple implementations. In this case, using a single struct suffices if we do not anticipate different subscriber behaviors. It simplifies design but consider adding an interface if future requirements might introduce varies subscriber types.
+
+2. If the list of subscribers is small and speed isn't a priority, a Vec could suffice. However, as the list grows and we prioritize quick lookups and updates, DashMap shines with its efficient performance.
+
+3. DashMap effortlessly manages concurrent access across multiple threads, which is incredibly beneficial in Rust's concurrency model. While Singleton could be an option, its primary focus is on restricting instances rather than handling thread safety. Unless there's a compelling need for a single instance, DashMap remains the preferred choice in Rust, ensuring thread safety without the added complexity.
 
 #### Reflection Publisher-2
 

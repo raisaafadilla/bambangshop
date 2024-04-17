@@ -84,5 +84,10 @@ This is the place for you to write reflections:
 3. DashMap effortlessly manages concurrent access across multiple threads, which is incredibly beneficial in Rust's concurrency model. While Singleton could be an option, its primary focus is on restricting instances rather than handling thread safety. Unless there's a compelling need for a single instance, DashMap remains the preferred choice in Rust, ensuring thread safety without the added complexity.
 
 #### Reflection Publisher-2
+1. Splitting Services and Repositories from the Model in MVC is crucial for maintaining, scaling, and testing our code effectively. This separation ensures adherence to key design principles like the Single Responsibility Principle (SRP), Separation of Concerns (SoC), and Don't Repeat Yourself (DRY). By organizing our code this way, we make it easier to manage, scale, and test. It simplifies maintenance and accommodates changes as our system becomes more complex.
+
+2. Depending solely on the Model can overload it with various tasks, making the code complex and harder to maintain. However, if we distribute responsibilities and focus each model on its specific tasks, we can better manage complexity and maintain a more organized codebase. Interactions between models like Program, Subscriber, and Notification can further complicate code, but efficient management helps mitigate this complexity.
+
+3. Postman makes testing API endpoints easier. It helps check if programs work as expected by organizing endpoint calls. Its best feature is grouping endpoints into collections, which makes testing simpler and lets us automate tests.
 
 #### Reflection Publisher-3

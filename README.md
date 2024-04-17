@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
     -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [x] Commit: `Implement publish function in Program service and Program controller.`
+    -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -91,3 +91,8 @@ This is the place for you to write reflections:
 3. Postman makes testing API endpoints easier. It helps check if programs work as expected by organizing endpoint calls. Its best feature is grouping endpoints into collections, which makes testing simpler and lets us automate tests.
 
 #### Reflection Publisher-3
+1. In this tutorial, we use the Push model variation of the Observer Pattern. This occurs because in the tutorial, the program publisher proactively dispatches notifications to subscribers whenever there is a change in the program's status.
+
+2. Using the Pull model from the Observer Pattern involves subscribers actively requesting data from the publisher for updates. This model offers advantages such as resource efficiency, ensuring subscribers only update information when necessary, and providing greater control over data updates. However, implementing the Pull model introduces complexity due to managing request and response exchanges between the parties. Additionally, there's a risk of outdated information if subscribers don't regularly update their data, potentially leading to discrepancies between their data and the latest information from the publisher.
+
+3. Without multi-threading, notifications are sent sequentially, potentially causing delays, especially with many subscribers or slow responders. This approach can also slow down or freeze the application if subscribers take time processing notifications.
